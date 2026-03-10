@@ -4,20 +4,37 @@ using UnityEngine;
 
 public class VidaEnemigo : MonoBehaviour
 {
-    public int health = 3;
+    Animator anim;
 
-    public void TakeDamage(int damage)
+    void Start()
     {
-        health -= damage;
-
-        if (health <= 0)
-        {
-            Die();
-        }
+        anim = GetComponent<Animator>();
     }
 
-    void Die()
+    public void Attack()
     {
-        Destroy(gameObject);
+        anim.SetTrigger("Attack");
+    }
+
+    public void Hurt()
+    {
+        anim.SetTrigger("Hurt");
+    }
+
+    public void Smoke()
+    {
+        anim.SetTrigger("Smoke");
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+            anim.SetTrigger("Attack");
+
+        if (Input.GetKeyDown(KeyCode.H))
+            anim.SetTrigger("Hurt");
+
+        if (Input.GetKeyDown(KeyCode.K))
+            anim.SetTrigger("Smoke");
     }
 }
