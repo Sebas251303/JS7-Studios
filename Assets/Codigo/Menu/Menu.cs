@@ -8,8 +8,13 @@ public class Menu : MonoBehaviour
 {
     public void Jugar()
     {
-        
-        SceneManager.LoadScene("GameScene");
+
+          
+       FindObjectOfType<MapaController>().IniciarJuego();
+
+           
+       gameObject.SetActive(false);
+
     }
 
     public void Salir()
