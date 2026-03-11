@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Perder.unity
     guid: 1d6111904a21873479a80132640d8afc
+  - enabled: 1
+    path: Assets/Mapa.unity
+    guid: 158211c3d8e5bc847825d38ed2864cab
   m_configObjects: {}
