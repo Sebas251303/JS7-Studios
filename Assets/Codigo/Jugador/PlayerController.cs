@@ -1,86 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Movimiento")]
-    public float speed = 5f;
-    public float jumpForce = 12f;
-
-    [Header("Doble Salto")]
-    public int maxJumps = 2;
-
-    [Header("Ground Check")]
-    public Transform groundCheck;
-    public float groundCheckRadius = 0.2f;
-    public LayerMask groundLayer;
-
+    public float velocidad = 5f;
+    public float fuerzaSalto = 10f;
+    public float longitudRaycast = 0.1f;
+    public LayerMask capaSuelo;
+    public bool enSuelo;
     private Rigidbody2D rb;
-    private Animator animator;
-
-    private int jumpCount;
-    private bool isGrounded;
-
+    public Animator anim;
+    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        Move();
-        HandleJump();
-        CheckGround();
-        UpdateAnimations();
-    }
+        float velocidadX = Input.GetAxis("Horizontal")*Time.deltaTime*velocidad;
 
-    void Move()
-    {
-        float moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        anim.SetFloat("Movimiento", velocidadX*velocidad);
 
-        if (moveInput != 0)
-            transform.localScale = new Vector3(Mathf.Sign(moveInput), 1, 1);
-    }
-
-    void HandleJump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < maxJumps)
+        if (velocidadX < 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            jumpCount++;
-
-            animator.SetTrigger("Jump");
-            animator.SetBool("isGrounded", false);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
-    }
-
-    void CheckGround()
-    {
-        isGrounded = Physics2D.OverlapCircle(
-            groundCheck.position,
-            groundCheckRadius,
-            groundLayer
-        );
-
-        if (isGrounded)
+        if (velocidadX > 0)
         {
-            jumpCount = 0;
+            transform.localScale = new Vector3(1, 1, 1);
         }
-    }
+        
+        Vector3 posicion = transform.position;
 
-    void UpdateAnimations()
-    {
-        animator.SetBool("isGrounded", isGrounded);
-        animator.SetFloat("yVelocity", rb.velocity.y);
-    }
+        transform.position = new Vector3(velocidadX + posicion.x, posicion.y, posicion.z);
 
-    void OnDrawGizmosSelected()
-    {
-        if (groundCheck != null)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, longitudRaycast, capaSuelo);
+        enSuelo = hit.collider != null;
+
+        anim.SetBool("EnAire", enSuelo);
+
+        
+        if (enSuelo && Input.GetKeyDown(KeyCode.Space))
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+            rb.AddForce(new Vector2(0f, fuerzaSalto), ForceMode2D.Impulse);
         }
+
+
     }
+     void OnDrawGizmos()
+        {
+         Gizmos.color = Color.red;
+         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * longitudRaycast);
+        }
 }
