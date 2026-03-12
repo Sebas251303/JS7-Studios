@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Jugador
   - Ground
+  - PinchosNormales
+  - Pinchos_Insta_Kill
   layers:
   - Default
   - TransparentFX
