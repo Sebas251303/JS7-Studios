@@ -1,27 +1,22 @@
 using UnityEngine;
 
-public class Fireball : MonoBehaviour
+public class FireBall : MonoBehaviour
 {
-    [Header("Ajustes del Disparo")]
-    public float speed = 10f;        // Qué tan rápido vuela
-    public float timeToDestroy = 2f; // Cuántos segundos vive antes de desaparecer
-
+    public float velocidad = 10f;
+    public float tiempoVida = 2f;
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        // Esta línea es magia: le dice a Unity que destruya esta bola en 2 segundos
-        Destroy(gameObject, timeToDestroy);
+        // Destruir la bola después de 2 segundos para no llenar la memoria
+        Destroy(gameObject, tiempoVida);
     }
 
     void Update()
     {
-        // Esto lee hacia dónde está mirando la bola (1 para derecha, -1 para izquierda)
-        float direction = transform.localScale.x;
-
-        // Empuja la bola hacia esa dirección constantemente
-        rb.velocity = new Vector2(speed * direction, 0);
+        // Se mueve hacia donde esté mirando el dragón
+        float direccion = transform.localScale.x;
+        rb.velocity = new Vector2(velocidad * direccion, 0);
     }
 }
