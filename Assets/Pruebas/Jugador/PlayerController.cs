@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public bool enSuelo;
     private Rigidbody2D rb;
 
-    public Animator anim;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         float velocidadX = Input.GetAxis("Horizontal")*Time.deltaTime*velocidad;
 
-        anim.SetFloat("Movement", velocidadX*velocidad);
+        animator.SetFloat("Movement", velocidadX*velocidad);
 
         if(velocidadX < 0)
         {
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0f, fuerzaSalto), ForceMode2D.Impulse);
         }
 
-        anim.SetBool("ensuelo", enSuelo);
+        animator.SetBool("ensuelo", enSuelo);
     }
 
     void OnDrawGizmos()
