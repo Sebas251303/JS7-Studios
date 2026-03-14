@@ -7,13 +7,16 @@ public class Fondo : MonoBehaviour
   [SerializeField] private Vector2 velocidadMovimiento;
     private Vector2 offset;
     private Material material;
+    private Rigidbody2D rb;
 
-    private void Awake(){
+    private void Awake()
+    {
         material = GetComponent<SpriteRenderer>().material;
+        rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
     }
 
     private void Update(){
-        offset = velocidadMovimiento * Time.deltaTime;
+        offset = (rb.velocity.x * 0.1f) * velocidadMovimiento * Time.deltaTime;
         material.mainTextureOffset += offset;
     }
 }
