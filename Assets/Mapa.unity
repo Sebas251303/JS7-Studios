@@ -5018,6 +5018,7 @@ GameObject:
   - component: {fileID: 912058139}
   - component: {fileID: 912058141}
   - component: {fileID: 912058142}
+  - component: {fileID: 912058143}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Player
@@ -5208,6 +5209,20 @@ MonoBehaviour:
   enSuelo: 0
   muerto: 0
   anim: {fileID: 912058141}
+--- !u!114 &912058143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912058134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de2c259178d6d4dbc8c5dbb12a4234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 912058142}
+  tiempoEspera: 2
 --- !u!1 &986248974
 GameObject:
   m_ObjectHideFlags: 0
