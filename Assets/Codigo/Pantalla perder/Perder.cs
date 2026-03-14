@@ -15,7 +15,7 @@ public class Perder : MonoBehaviour
     public void Intentar()
     {
         
-        // SceneManager.LoadScene("Mapa"); // cuando la tengas creada
+         SceneManager.LoadScene("Mapa"); 
        
     }
 
