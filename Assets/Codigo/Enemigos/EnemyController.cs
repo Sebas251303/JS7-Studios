@@ -40,6 +40,20 @@ public class EnemyController : MonoBehaviour
             Vector2 direction = (player.position - transform.position).normalized;
 
             movement = new Vector2(direction.x, 0);
+            //  correcion de la vista del enemigo
+        Vector3 escala = transform.localScale;
+
+        if (direction.x < 0)
+        {
+            escala.x = Mathf.Abs(escala.x); 
+        }
+        else if (direction.x > 0)
+        {
+            escala.x = -Mathf.Abs(escala.x); 
+        }
+
+        transform.localScale = escala;
+
         }
         else
         {
