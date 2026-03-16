@@ -15,41 +15,62 @@ public class PlayerController : MonoBehaviour
     public bool muerto;
     private Rigidbody2D rb;
     public Animator anim;
+
+    public GameObject bolaFuegoPrefab;
+    public Transform puntoDisparo;
+    // ----------------------------------------
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    
     void Update()
     {
-        if(!muerto)
+        if (!muerto)
         {
-        Movimiento();
+            Movimiento();
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down,longitudRaycast, capaSuelo);
-        enSuelo = hit.collider != null;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, longitudRaycast, capaSuelo);
+            enSuelo = hit.collider != null;
 
-        if(enSuelo && Input.GetKeyDown(KeyCode.Space) && !recibiendoDanio)
-        {
-            rb.AddForce(new Vector2(0f, fuerzaSalto), ForceMode2D.Impulse);
+            if (enSuelo && Input.GetKeyDown(KeyCode.Space) && !recibiendoDanio)
+            {
+                rb.AddForce(new Vector2(0f, fuerzaSalto), ForceMode2D.Impulse);
+            }
+
+            // --- DETECCIÓN DE TECLA DE ATAQUE ---
+            if (Input.GetKeyDown(KeyCode.Z) && !recibiendoDanio)
+            {
+                anim.SetTrigger("Ataque");
+            }
+            // ------------------------------------
         }
 
-  
-        }
-        
         anim.SetBool("ensuelo", enSuelo);
         anim.SetBool("recibeDanio", recibiendoDanio);
         anim.SetBool("muerto", muerto);
     }
 
+    // --- FUNCIÓN QUE LLAMA EL EVENTO DE ANIMACIÓN ---
+    public void DispararBola()
+    {
+        if (bolaFuegoPrefab != null && puntoDisparo != null)
+        {
+            GameObject proyectil = Instantiate(bolaFuegoPrefab, puntoDisparo.position, puntoDisparo.rotation);
+            // Hereda la escala para que salga hacia el lado correcto
+            proyectil.transform.localScale = transform.localScale;
+        }
+    }
+    // ------------------------------------------------
+
     public void Movimiento()
     {
-        float velocidadX = Input.GetAxis("Horizontal")*Time.deltaTime*velocidad;
+        float velocidadX = Input.GetAxis("Horizontal") * Time.deltaTime * velocidad;
 
-        anim.SetFloat("Movement", velocidadX*velocidad);
+        anim.SetFloat("Movement", velocidadX * velocidad);
 
-        if(velocidadX < 0)
+        if (velocidadX < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
@@ -60,38 +81,38 @@ public class PlayerController : MonoBehaviour
 
         Vector3 posicion = transform.position;
 
-        if(!recibiendoDanio)
-        transform. position = new Vector3(velocidadX + posicion.x, posicion.y, posicion.z);  
+        if (!recibiendoDanio)
+            transform.position = new Vector3(velocidadX + posicion.x, posicion.y, posicion.z);
     }
+
     public void RecibeDanio(Vector2 direccion, int cantDanio)
     {
-        if(!recibiendoDanio)
+        if (!recibiendoDanio)
         {
-        recibiendoDanio = true;
-        vida -= cantDanio;
-        if(vida<=0)
-        {
-            muerto = true;
-        }
+            recibiendoDanio = true;
+            vida -= cantDanio;
+            if (vida <= 0)
+            {
+                muerto = true;
+            }
 
-        if(!muerto)
-        {
-            Vector2 rebote = new Vector2(transform.position.x - direccion.x, 0.2f).normalized;
-             rb.AddForce(rebote * fuerzaRebote, ForceMode2D.Impulse);  
-        }
-
+            if (!muerto)
+            {
+                Vector2 rebote = new Vector2(transform.position.x - direccion.x, 0.2f).normalized;
+                rb.AddForce(rebote * fuerzaRebote, ForceMode2D.Impulse);
+            }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("PinchosNormales"))
+        if (collision.gameObject.CompareTag("PinchosNormales"))
         {
             Vector2 direccionDanio = collision.transform.position;
             RecibeDanio(direccionDanio, 1);
         }
 
-        if(collision.gameObject.CompareTag("Pinchos_Insta_Kill"))
+        if (collision.gameObject.CompareTag("Pinchos_Insta_Kill"))
         {
             muerto = true;
         }
@@ -99,11 +120,11 @@ public class PlayerController : MonoBehaviour
 
     public void DesactivaDanio()
     {
-     recibiendoDanio = false;
-     rb.velocity = Vector2.zero;
-     
+        recibiendoDanio = false;
+        rb.velocity = Vector2.zero;
     }
-        void OnDrawGizmos()
+
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * longitudRaycast);
