@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+     [SerializeField] UIManager uIManager;
+     
     public float velocidad = 2f;
     public int vida = 3;
     public float fuerzaSalto = 5f;
@@ -15,6 +17,9 @@ public class PlayerController : MonoBehaviour
     public bool muerto;
     private Rigidbody2D rb;
     public Animator anim;
+
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -69,6 +74,12 @@ public class PlayerController : MonoBehaviour
         {
         recibiendoDanio = true;
         vida -= cantDanio;
+        if(uIManager != null)
+        {
+            uIManager.RestaCorazones(vida);
+        }
+
+
         if(vida<=0)
         {
             muerto = true;
