@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-     [SerializeField] UIManager uIManager;
-     
+    [SerializeField] UIManager uIManager;
+
     public float velocidad = 2f;
     public int vida = 3;
     public float fuerzaSalto = 5f;
@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public GameObject bolaFuegoPrefab;
     public Transform puntoDisparo;
-    
 
     void Start()
     {
@@ -45,7 +44,6 @@ public class PlayerController : MonoBehaviour
             {
                 anim.SetTrigger("Ataque");
             }
-            // ------------------------------------
         }
 
         anim.SetBool("ensuelo", enSuelo);
@@ -53,60 +51,47 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("muerto", muerto);
     }
 
-    // --- FUNCION QUE LLAMA EL EVENTO DE ANIMACION ---
     public void DispararBola()
     {
         if (bolaFuegoPrefab != null && puntoDisparo != null)
         {
             GameObject proyectil = Instantiate(bolaFuegoPrefab, puntoDisparo.position, puntoDisparo.rotation);
-            // Hereda la escala para que salga hacia el lado correcto
             proyectil.transform.localScale = transform.localScale;
         }
     }
-    // ------------------------------------------------
 
     public void Movimiento()
     {
         float velocidadX = Input.GetAxis("Horizontal") * Time.deltaTime * velocidad;
+        anim.SetFloat("Movement", Mathf.Abs(velocidadX * velocidad));
 
-        anim.SetFloat("Movement", velocidadX * velocidad);
-
-        if (velocidadX < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        if (velocidadX > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
+        if (velocidadX < 0) transform.localScale = new Vector3(-1, 1, 1);
+        if (velocidadX > 0) transform.localScale = new Vector3(1, 1, 1);
 
         Vector3 posicion = transform.position;
-
         if (!recibiendoDanio)
             transform.position = new Vector3(velocidadX + posicion.x, posicion.y, posicion.z);
     }
 
     public void RecibeDanio(Vector2 direccion, int cantDanio)
     {
-        if(!recibiendoDanio)
-        {
-        recibiendoDanio = true;
-        vida -= cantDanio;
-        if(uIManager != null)
-        {
-            uIManager.RestaCorazones(vida);
-        }
-        if(vida<=0)
+        if (!recibiendoDanio && !muerto)
         {
             recibiendoDanio = true;
             vida -= cantDanio;
+
+            if (uIManager != null)
+            {
+                uIManager.RestaCorazones(vida);
+            }
+
             if (vida <= 0)
             {
                 muerto = true;
             }
-
-            if (!muerto)
+            else
             {
+                // Solo rebota si no ha muerto
                 Vector2 rebote = new Vector2(transform.position.x - direccion.x, 0.2f).normalized;
                 rb.AddForce(rebote * fuerzaRebote, ForceMode2D.Impulse);
             }
@@ -124,6 +109,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Pinchos_Insta_Kill"))
         {
             muerto = true;
+            if (uIManager != null) uIManager.RestaCorazones(0);
         }
     }
 
