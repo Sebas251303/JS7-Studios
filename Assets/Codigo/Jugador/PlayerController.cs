@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+     [SerializeField] UIManager uIManager;
+     
     public float velocidad = 2f;
     public int vida = 3;
     public float fuerzaSalto = 5f;
@@ -15,10 +17,9 @@ public class PlayerController : MonoBehaviour
     public bool muerto;
     private Rigidbody2D rb;
     public Animator anim;
-
     public GameObject bolaFuegoPrefab;
     public Transform puntoDisparo;
-    // ----------------------------------------
+    
 
     void Start()
     {
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(new Vector2(0f, fuerzaSalto), ForceMode2D.Impulse);
             }
 
-            // --- DETECCIÓN DE TECLA DE ATAQUE ---
+            // --- TECLA DE ATAQUE ---
             if (Input.GetKeyDown(KeyCode.Z) && !recibiendoDanio)
             {
                 anim.SetTrigger("Ataque");
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("muerto", muerto);
     }
 
-    // --- FUNCIÓN QUE LLAMA EL EVENTO DE ANIMACIÓN ---
+    // --- FUNCION QUE LLAMA EL EVENTO DE ANIMACION ---
     public void DispararBola()
     {
         if (bolaFuegoPrefab != null && puntoDisparo != null)
@@ -87,7 +88,15 @@ public class PlayerController : MonoBehaviour
 
     public void RecibeDanio(Vector2 direccion, int cantDanio)
     {
-        if (!recibiendoDanio)
+        if(!recibiendoDanio)
+        {
+        recibiendoDanio = true;
+        vida -= cantDanio;
+        if(uIManager != null)
+        {
+            uIManager.RestaCorazones(vida);
+        }
+        if(vida<=0)
         {
             recibiendoDanio = true;
             vida -= cantDanio;
