@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
             }
 
             // --- TECLA DE ATAQUE ---
-            if (Input.GetKeyDown(KeyCode.Z) && !recibiendoDanio)
+           
+            if (Input.GetMouseButtonDown(0) && !recibiendoDanio)
             {
                 anim.SetTrigger("Ataque");
             }
