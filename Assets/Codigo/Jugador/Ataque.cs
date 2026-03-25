@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Ataque : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float velocidad = 10f;
+    public float tiempoVida = 2f;
     void Start()
     {
-        
+         Destroy(gameObject, tiempoVida);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        transform.Translate(Vector2.right * velocidad * Time.deltaTime);
     }
 }
