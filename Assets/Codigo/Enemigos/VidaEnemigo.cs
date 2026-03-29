@@ -2,26 +2,22 @@ using UnityEngine;
 
 public class VidaEnemigo : MonoBehaviour
 {
-    [Header("Ajustes de Salud")]
-    public int vidaActual = 100;
-    public int vidaMaxima = 100;
-
-    Animator anim;
+    public int vidaMaxima = 2;
+    private int vidaActual;
     private bool estaMuerto = false;
+    public Animator anim;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
         vidaActual = vidaMaxima;
     }
 
-    // Esta es la función que llamará la bola de fuego
     public void RecibirDanio(int cantidad)
     {
         if (estaMuerto) return;
 
         vidaActual -= cantidad;
-        Hurt(); // Llama a tu función de animación
+
 
         if (vidaActual <= 0)
         {
@@ -32,27 +28,14 @@ public class VidaEnemigo : MonoBehaviour
     void Morir()
     {
         estaMuerto = true;
-        Smoke(); // Usamos la animación de Smoke (humo) como muerte
+        anim.SetTrigger("Die");
 
-        // Desactivamos colisiones para que no estorbe
-        GetComponent<Collider2D>().enabled = false;
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null)
+        {
+            col.enabled = false;
+        }
 
-        // Opcional: Destruir el objeto después de que termine el humo
         Destroy(gameObject, 1f);
-    }
-
-    // --- Tus funciones originales ---
-    public void Attack() { anim.SetTrigger("Attack"); }
-    public void Hurt() { anim.SetTrigger("Hurt"); }
-    public void Smoke() { anim.SetTrigger("Smoke"); }
-
-    void Update()
-    {
-        if (estaMuerto) return;
-
-        // Mantengo tus teclas de prueba
-        if (Input.GetKeyDown(KeyCode.A)) Attack();
-        if (Input.GetKeyDown(KeyCode.H)) Hurt();
-        if (Input.GetKeyDown(KeyCode.K)) Smoke();
     }
 }

@@ -3061,8 +3061,9 @@ GameObject:
   - component: {fileID: 298917550}
   - component: {fileID: 298917549}
   - component: {fileID: 298917548}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1 (8)
+  - component: {fileID: 298917553}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3243,6 +3244,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &298917553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298917546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 298917548}
 --- !u!1 &384997753
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,8 +3272,9 @@ GameObject:
   - component: {fileID: 384997757}
   - component: {fileID: 384997756}
   - component: {fileID: 384997755}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1 (4)
+  - component: {fileID: 384997760}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3439,6 +3455,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &384997760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384997753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 384997755}
 --- !u!1 &397227897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3453,8 +3483,9 @@ GameObject:
   - component: {fileID: 397227901}
   - component: {fileID: 397227900}
   - component: {fileID: 397227899}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1 (9)
+  - component: {fileID: 397227904}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3635,6 +3666,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &397227904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397227897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 397227899}
 --- !u!1 &503164045
 GameObject:
   m_ObjectHideFlags: 0
@@ -3649,8 +3694,9 @@ GameObject:
   - component: {fileID: 503164049}
   - component: {fileID: 503164048}
   - component: {fileID: 503164047}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1 (3)
+  - component: {fileID: 503164052}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3831,6 +3877,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &503164052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503164045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 503164047}
 --- !u!1 &605095920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3845,8 +3905,9 @@ GameObject:
   - component: {fileID: 605095924}
   - component: {fileID: 605095923}
   - component: {fileID: 605095922}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1 (1)
+  - component: {fileID: 605095927}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4027,6 +4088,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &605095927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605095920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 605095922}
 --- !u!1 &617712692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4199,8 +4274,9 @@ GameObject:
   - component: {fileID: 650256786}
   - component: {fileID: 650256785}
   - component: {fileID: 650256784}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1 (15)
+  - component: {fileID: 650256789}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4381,6 +4457,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &650256789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650256782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 650256784}
 --- !u!1 &687359607
 GameObject:
   m_ObjectHideFlags: 0
@@ -4395,8 +4485,9 @@ GameObject:
   - component: {fileID: 687359611}
   - component: {fileID: 687359610}
   - component: {fileID: 687359609}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1 (13)
+  - component: {fileID: 687359614}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4577,6 +4668,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &687359614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687359607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 687359609}
 --- !u!1 &721773768
 GameObject:
   m_ObjectHideFlags: 0
@@ -5630,15 +5735,15 @@ Transform:
   - {fileID: 605095921}
   - {fileID: 1413321666}
   - {fileID: 503164046}
-  - {fileID: 384997754}
   - {fileID: 1898382791}
+  - {fileID: 1649170671}
   - {fileID: 1826421530}
+  - {fileID: 384997754}
   - {fileID: 298917547}
   - {fileID: 397227898}
   - {fileID: 687359608}
   - {fileID: 650256783}
   - {fileID: 1964646106}
-  - {fileID: 1649170671}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1182210441
@@ -8817,8 +8922,9 @@ GameObject:
   - component: {fileID: 1413321669}
   - component: {fileID: 1413321668}
   - component: {fileID: 1413321667}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1 (2)
+  - component: {fileID: 1413321672}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8999,6 +9105,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1413321672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413321665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 1413321667}
 --- !u!1 &1447984402
 GameObject:
   m_ObjectHideFlags: 0
@@ -9165,8 +9285,9 @@ GameObject:
   - component: {fileID: 1649170674}
   - component: {fileID: 1649170673}
   - component: {fileID: 1649170672}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1 (17)
+  - component: {fileID: 1649170677}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9347,6 +9468,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1649170677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649170670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 1649170672}
 --- !u!1 &1783943242
 GameObject:
   m_ObjectHideFlags: 0
@@ -93212,8 +93347,9 @@ GameObject:
   - component: {fileID: 1826421533}
   - component: {fileID: 1826421532}
   - component: {fileID: 1826421531}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1 (7)
+  - component: {fileID: 1826421536}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93394,6 +93530,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1826421536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826421529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 1826421531}
 --- !u!1 &1879218712
 GameObject:
   m_ObjectHideFlags: 0
@@ -93408,8 +93558,9 @@ GameObject:
   - component: {fileID: 1879218716}
   - component: {fileID: 1879218715}
   - component: {fileID: 1879218714}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1
+  - component: {fileID: 1879218719}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93590,6 +93741,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1879218719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879218712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 1879218714}
 --- !u!1 &1898382790
 GameObject:
   m_ObjectHideFlags: 0
@@ -93604,8 +93769,9 @@ GameObject:
   - component: {fileID: 1898382794}
   - component: {fileID: 1898382793}
   - component: {fileID: 1898382792}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1 (6)
+  - component: {fileID: 1898382797}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93786,6 +93952,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1898382797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898382790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 1898382792}
 --- !u!1 &1919821235
 GameObject:
   m_ObjectHideFlags: 0
@@ -93894,8 +94074,9 @@ GameObject:
   - component: {fileID: 1964646109}
   - component: {fileID: 1964646108}
   - component: {fileID: 1964646107}
-  m_Layer: 0
-  m_Name: Enemigo_Bat_1 (16)
+  - component: {fileID: 1964646112}
+  m_Layer: 7
+  m_Name: Enemigo_Bat_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94076,6 +94257,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1964646112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964646105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 1964646107}
 --- !u!1 &1976674996
 GameObject:
   m_ObjectHideFlags: 0
@@ -94123,7 +94318,8 @@ GameObject:
   - component: {fileID: 1984158476}
   - component: {fileID: 1984158479}
   - component: {fileID: 1984158480}
-  m_Layer: 0
+  - component: {fileID: 1984158481}
+  m_Layer: 7
   m_Name: Enemigo_Bat_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94305,6 +94501,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1984158481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984158474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 2
+  anim: {fileID: 1984158480}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
