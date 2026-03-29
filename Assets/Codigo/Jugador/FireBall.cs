@@ -10,7 +10,7 @@ public class FireBall : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        // Calculamos la dirección basada en la escala (1 o -1)
+        // Calculamos la direccion basada en la escala (1 o -1)
         float direccion = transform.localScale.x;
         rb.velocity = new Vector2(velocidad * direccion, 0);
 
@@ -19,9 +19,17 @@ public class FireBall : MonoBehaviour
     }
 
     // ESTO ES LO QUE HACE QUE DESAPAREZCA AL CHOCAR
-    private void OnCollisionEnter2D(Collision2D collision)
+private void OnCollisionEnter2D(Collision2D collision)
+{
+    // Verificamos si golpea a un enemigo
+    VidaEnemigo enemigo = collision.gameObject.GetComponent<VidaEnemigo>();
+
+    if (enemigo != null)
     {
-        // Si toca cualquier cosa (pared, suelo, enemigo), se borra
-        Destroy(gameObject);
+        enemigo.RecibirDanio(1); // Puedes ajustar el daÃ±o
     }
+
+    // Se destruye siempre
+    Destroy(gameObject);
+}
 }
