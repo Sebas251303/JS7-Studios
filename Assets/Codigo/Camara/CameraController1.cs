@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class CameraController1 : MonoBehaviour
 {
-    [Header("Parametros")]
-    public Transform player;
-    public Vector3 offsetPosition;
-    public float followSpeedPlayer = 2f;
-    private bool followPlayer = true;
+
+
+    private Vector3 offset = new Vector3(0f , 0f , -10f);
+    private float smoothTime = 0.25f;
+    private Vector3 velocity = Vector3.zero;
+
+    [SerializeField] private Transform target;
 
     void Update()
     {
-        if (player != null && followPlayer)
-        {
-            Vector3 targetPosition = new Vector3(player.position.x + offsetPosition.x, player.position.y + offsetPosition.y, transform.position.z);
-            transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeedPlayer * Time.deltaTime);
-        }
-    }
-
-    public void IsFollowPlayer(bool value)
-    {
-        followPlayer = value;
+        Vector3 targetPosition = target.position + offset;
+        transform.position = Vector3.SmoothDamp(transform.position , targetPosition , ref velocity , smoothTime);
     }
 }
