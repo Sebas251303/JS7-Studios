@@ -4114,6 +4114,7 @@ GameObject:
   - component: {fileID: 617712696}
   - component: {fileID: 617712695}
   - component: {fileID: 617712694}
+  - component: {fileID: 617712697}
   m_Layer: 0
   m_Name: MiniJefe_2
   m_TagString: Untagged
@@ -4260,6 +4261,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &617712697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617712692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046a7e733ce65ab43a28c81ec68892b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 150
+  speed: 3
+  player: {fileID: 912058137}
+  damage: 1
 --- !u!1 &650256782
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,6 +4711,7 @@ GameObject:
   - component: {fileID: 721773772}
   - component: {fileID: 721773771}
   - component: {fileID: 721773770}
+  - component: {fileID: 721773773}
   m_Layer: 0
   m_Name: MiniJefe_1
   m_TagString: Untagged
@@ -4840,6 +4858,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &721773773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721773768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046a7e733ce65ab43a28c81ec68892b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  speed: 2
+  player: {fileID: 912058137}
+  damage: 1
 --- !u!1 &814919111
 GameObject:
   m_ObjectHideFlags: 0
