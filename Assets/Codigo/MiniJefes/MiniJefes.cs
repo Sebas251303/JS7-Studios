@@ -27,10 +27,14 @@ public class MiniJefes : MonoBehaviour
                 anim.SetFloat("Speed", distancia);
             }
 
+            Vector3 escala = transform.localScale;
+
             if (player.position.x > transform.position.x)
-                transform.localScale = new Vector3(1, 1, 1);
+                escala.x = -Mathf.Abs(escala.x);
             else
-                transform.localScale = new Vector3(-1, 1, 1);
+                escala.x = Mathf.Abs(escala.x);
+
+            transform.localScale = escala;
         }
     }
 
