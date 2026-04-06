@@ -4370,10 +4370,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 046a7e733ce65ab43a28c81ec68892b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 64.1
+  detectionRadius: 11.6
   player: {fileID: 912058137}
+  enMovimiento: 0
   damage: 1
-  anim: {fileID: 0}
+  anim: {fileID: 617712698}
 --- !u!95 &617712698
 Animator:
   serializedVersion: 5
@@ -4973,8 +4975,8 @@ GameObject:
   - component: {fileID: 721773772}
   - component: {fileID: 721773771}
   - component: {fileID: 721773770}
-  - component: {fileID: 721773773}
   - component: {fileID: 721773774}
+  - component: {fileID: 721773775}
   m_Layer: 0
   m_Name: MiniJefe_1
   m_TagString: Untagged
@@ -5121,22 +5123,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &721773773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721773768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 046a7e733ce65ab43a28c81ec68892b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  player: {fileID: 912058137}
-  damage: 1
-  anim: {fileID: 0}
 --- !u!114 &721773774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5150,6 +5136,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaMaxima: 100
+  anim: {fileID: 0}
+--- !u!114 &721773775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721773768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046a7e733ce65ab43a28c81ec68892b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 65.65
+  detectionRadius: 10.95
+  player: {fileID: 912058137}
+  enMovimiento: 0
+  damage: 1
   anim: {fileID: 0}
 --- !u!1 &730172769
 GameObject:
@@ -5782,7 +5786,7 @@ Transform:
   m_GameObject: {fileID: 912058134}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83.4, y: 8.71, z: 0}
+  m_LocalPosition: {x: 218.4, y: -15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
