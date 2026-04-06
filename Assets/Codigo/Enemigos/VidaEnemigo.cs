@@ -18,6 +18,11 @@ public class VidaEnemigo : MonoBehaviour
 
         vidaActual -= cantidad;
 
+        
+        if (anim != null)
+        {
+            anim.SetTrigger("Hit");
+        }
 
         if (vidaActual <= 0)
         {
@@ -28,7 +33,12 @@ public class VidaEnemigo : MonoBehaviour
     void Morir()
     {
         estaMuerto = true;
-        anim.SetTrigger("Die");
+
+       
+        if (anim != null)
+        {
+            anim.SetTrigger("Die");
+        }
 
         Collider2D col = GetComponent<Collider2D>();
         if (col != null)

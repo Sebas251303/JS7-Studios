@@ -1,46 +1,54 @@
 using UnityEngine;
 
-public class MiniBoss : MonoBehaviour
+public class MiniJefes : MonoBehaviour
 {
-    public int health = 100;
     public float speed = 2f;
     public Transform player;
-
-    public int damage = 1; 
+    public int damage = 1;
+    public Animator anim;
 
     void Update()
     {
         if (player != null)
         {
+            Vector3 target = player.position;
+            target.y = transform.position.y;
+
             transform.position = Vector2.MoveTowards(
                 transform.position,
-                player.position,
+                target,
                 speed * Time.deltaTime
             );
+
+            float distancia = Mathf.Abs(player.position.x - transform.position.x);
+
+            if (anim != null)
+            {
+                anim.SetFloat("Speed", distancia);
+            }
+
+            if (player.position.x > transform.position.x)
+                transform.localScale = new Vector3(1, 1, 1);
+            else
+                transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
-    public void TakeDamage(int damage)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        health -= damage;
-
-        if (health <= 0)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
-        }
-    }
-
-    
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            PlayerController playerScript = other.GetComponent<PlayerController>();
+            PlayerController playerScript = collision.gameObject.GetComponent<PlayerController>();
 
             if (playerScript != null)
             {
                 Vector2 direccion = transform.position;
                 playerScript.RecibeDanio(direccion, damage);
+
+                if (anim != null)
+                {
+                    anim.SetTrigger("Attack");
+                }
 
                 Debug.Log("MiniBoss hizo daño");
             }
