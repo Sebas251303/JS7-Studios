@@ -3258,6 +3258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 298917548}
+  zona: {fileID: 0}
 --- !u!1 &384997753
 GameObject:
   m_ObjectHideFlags: 0
@@ -3469,6 +3470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 384997755}
+  zona: {fileID: 0}
 --- !u!1 &397227897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3680,6 +3682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 397227899}
+  zona: {fileID: 0}
 --- !u!1 &490350292
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,7 +3695,7 @@ GameObject:
   - component: {fileID: 490350293}
   - component: {fileID: 490350295}
   m_Layer: 0
-  m_Name: ZonaMiniJefe
+  m_Name: ZonaMiniJefe#1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3986,6 +3989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 503164047}
+  zona: {fileID: 0}
 --- !u!1 &605095920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4197,6 +4201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 605095922}
+  zona: {fileID: 0}
 --- !u!1 &617712692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4212,7 +4217,7 @@ GameObject:
   - component: {fileID: 617712697}
   - component: {fileID: 617712699}
   - component: {fileID: 617712698}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MiniJefe_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4228,7 +4233,7 @@ Transform:
   m_GameObject: {fileID: 617712692}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -197.92, y: -34.44, z: -2.0990925}
+  m_LocalPosition: {x: -211.45, y: -34.44, z: -2.0990925}
   m_LocalScale: {x: 6.96, y: 8.13, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4370,11 +4375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 046a7e733ce65ab43a28c81ec68892b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 64.1
+  speed: 50.3
   detectionRadius: 11.6
   player: {fileID: 912058137}
   enMovimiento: 0
-  damage: 1
   anim: {fileID: 617712698}
 --- !u!95 &617712698
 Animator:
@@ -4409,8 +4413,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMaxima: 150
+  vidaMaxima: 5
   anim: {fileID: 617712698}
+  zona: {fileID: 1116880992}
 --- !u!1 &650256782
 GameObject:
   m_ObjectHideFlags: 0
@@ -4622,6 +4627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 650256784}
+  zona: {fileID: 0}
 --- !u!1 &687359607
 GameObject:
   m_ObjectHideFlags: 0
@@ -4833,6 +4839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 687359609}
+  zona: {fileID: 0}
 --- !u!1 &708849785
 GameObject:
   m_ObjectHideFlags: 0
@@ -4972,12 +4979,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 721773769}
+  - component: {fileID: 721773774}
+  - component: {fileID: 721773775}
+  - component: {fileID: 721773773}
   - component: {fileID: 721773772}
   - component: {fileID: 721773771}
   - component: {fileID: 721773770}
-  - component: {fileID: 721773774}
-  - component: {fileID: 721773775}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MiniJefe_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4993,7 +5001,7 @@ Transform:
   m_GameObject: {fileID: 721773768}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -329.46, y: -10.39, z: -2.0990925}
+  m_LocalPosition: {x: -336.9, y: -10.43, z: -2.0990925}
   m_LocalScale: {x: 7.3, y: 9.32, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5036,7 +5044,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.5, y: 1.5}
-    newSize: {x: 8.24, y: 4.37}
+    newSize: {x: 1.5, y: 1.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -5117,12 +5125,29 @@ SpriteRenderer:
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 8.24, y: 4.37}
+  m_Size: {x: 1.5, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &721773773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721773768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046a7e733ce65ab43a28c81ec68892b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  detectionRadius: 13.69
+  player: {fileID: 912058137}
+  enMovimiento: 0
+  anim: {fileID: 721773775}
 --- !u!114 &721773774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5135,26 +5160,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5b83b896f9ea944843ffb384c7c2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMaxima: 100
-  anim: {fileID: 0}
---- !u!114 &721773775
-MonoBehaviour:
+  vidaMaxima: 5
+  anim: {fileID: 721773775}
+  zona: {fileID: 490350295}
+--- !u!95 &721773775
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721773768}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 046a7e733ce65ab43a28c81ec68892b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 65.65
-  detectionRadius: 10.95
-  player: {fileID: 912058137}
-  enMovimiento: 0
-  damage: 1
-  anim: {fileID: 0}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75e635cd3d4ec8942a9928c6f467f944, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &730172769
 GameObject:
   m_ObjectHideFlags: 0
@@ -5786,7 +5815,7 @@ Transform:
   m_GameObject: {fileID: 912058134}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 218.4, y: -15, z: 0}
+  m_LocalPosition: {x: 88.7, y: 9.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9657,6 +9686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 1413321667}
+  zona: {fileID: 0}
 --- !u!1 &1447984402
 GameObject:
   m_ObjectHideFlags: 0
@@ -10150,6 +10180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 1649170672}
+  zona: {fileID: 0}
 --- !u!1 &1783943242
 GameObject:
   m_ObjectHideFlags: 0
@@ -94212,6 +94243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 1826421531}
+  zona: {fileID: 0}
 --- !u!1 &1879218712
 GameObject:
   m_ObjectHideFlags: 0
@@ -94423,6 +94455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 1879218714}
+  zona: {fileID: 0}
 --- !u!1 &1898382790
 GameObject:
   m_ObjectHideFlags: 0
@@ -94634,6 +94667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 1898382792}
+  zona: {fileID: 0}
 --- !u!1 &1919821235
 GameObject:
   m_ObjectHideFlags: 0
@@ -94939,6 +94973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 1964646107}
+  zona: {fileID: 0}
 --- !u!1 &1976674996
 GameObject:
   m_ObjectHideFlags: 0
@@ -95183,6 +95218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 2
   anim: {fileID: 1984158480}
+  zona: {fileID: 0}
 --- !u!1 &1996128055
 GameObject:
   m_ObjectHideFlags: 0

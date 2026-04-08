@@ -9,46 +9,36 @@ public class MiniJefes : MonoBehaviour
     private Vector2 movement;
     private bool JugadorVivo;
     public bool enMovimiento;
-    public int damage = 1;
     public Animator anim;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        JugadorVivo = true;
     }
-    void Update()
+
+        void Update()
+    {
+        if(JugadorVivo)
+        {
+            Movimiento();
+        }
+    }
+    private void Movimiento()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
         if (distanceToPlayer < detectionRadius)
         {
             Vector2 direction = (player.position - transform.position).normalized;
-            
+
             movement = new Vector2(direction.x, 0);
 
             Vector3 escala = transform.localScale;
 
-<<<<<<< HEAD
         if (direction.x < 0)
         {
             escala.x = Mathf.Abs(escala.x); 
-=======
-            float distancia = Mathf.Abs(player.position.x - transform.position.x);
-
-            if (anim != null)
-            {
-                anim.SetFloat("Speed", distancia);
-            }
-
-            Vector3 escala = transform.localScale;
-
-            if (player.position.x > transform.position.x)
-                escala.x = -Mathf.Abs(escala.x);
-            else
-                escala.x = Mathf.Abs(escala.x);
-
-            transform.localScale = escala;
->>>>>>> origin/main
         }
         else if (direction.x > 0)
         {
