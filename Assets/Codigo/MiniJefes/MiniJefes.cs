@@ -3,59 +3,77 @@ using UnityEngine;
 public class MiniJefes : MonoBehaviour
 {
     public float speed = 2f;
+    public float detectionRadius = 5.0f;
     public Transform player;
-    public int damage = 1;
+    private Rigidbody2D rb;
+    private Vector2 movement;
+    private bool JugadorVivo;
+    public bool enMovimiento;
     public Animator anim;
-
-    void Update()
+    void Start()
     {
-        if (player != null)
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        JugadorVivo = true;
+    }
+
+        void Update()
+    {
+        if(JugadorVivo)
         {
-            Vector3 target = player.position;
-            target.y = transform.position.y;
+            Movimiento();
+        }
+    }
+    private void Movimiento()
+    {
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-            transform.position = Vector2.MoveTowards(
-                transform.position,
-                target,
-                speed * Time.deltaTime
-            );
+        if (distanceToPlayer < detectionRadius)
+        {
+            Vector2 direction = (player.position - transform.position).normalized;
 
-            float distancia = Mathf.Abs(player.position.x - transform.position.x);
-
-            if (anim != null)
-            {
-                anim.SetFloat("Speed", distancia);
-            }
+            movement = new Vector2(direction.x, 0);
 
             Vector3 escala = transform.localScale;
 
-            if (player.position.x > transform.position.x)
-                escala.x = -Mathf.Abs(escala.x);
-            else
-                escala.x = Mathf.Abs(escala.x);
-
-            transform.localScale = escala;
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        if (direction.x < 0)
         {
+            escala.x = Mathf.Abs(escala.x); 
+        }
+        else if (direction.x > 0)
+        {
+            escala.x = -Mathf.Abs(escala.x); 
+        }
+
+        transform.localScale = escala;
+
+            enMovimiento = true;
+        }
+        else
+        {
+            movement = Vector2.zero;
+            enMovimiento = false;
+        }
+
+        rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
+
+        anim.SetBool("enMovimiento", enMovimiento);
+    }
+
+private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Vector2 direccionDanio = new Vector2(transform.position.x, 0);
             PlayerController playerScript = collision.gameObject.GetComponent<PlayerController>();
-
-            if (playerScript != null)
-            {
-                Vector2 direccion = transform.position;
-                playerScript.RecibeDanio(direccion, damage);
-
-                if (anim != null)
-                {
-                    anim.SetTrigger("Attack");
-                }
-
-                Debug.Log("MiniBoss hizo daño");
-            }
+            playerScript.RecibeDanio(direccionDanio, 1);
+            JugadorVivo = !playerScript.muerto;
         }
     }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
+    }
+
 }

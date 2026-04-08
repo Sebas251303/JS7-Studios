@@ -6,6 +6,7 @@ public class VidaEnemigo : MonoBehaviour
     private int vidaActual;
     private bool estaMuerto = false;
     public Animator anim;
+    public ZonaMiniJefes zona;
 
     void Start()
     {
@@ -38,12 +39,24 @@ public class VidaEnemigo : MonoBehaviour
         if (anim != null)
         {
             anim.SetTrigger("Die");
+            anim.SetBool("Die", true);
+        }
+
+        MiniJefes movimiento = GetComponent<MiniJefes>();
+        if (movimiento != null)
+        {
+    movimiento.enabled = false;
         }
 
         Collider2D col = GetComponent<Collider2D>();
         if (col != null)
         {
             col.enabled = false;
+        }
+
+        if (zona != null)
+        {
+            zona.AbrirZona();
         }
 
         Destroy(gameObject, 1f);
