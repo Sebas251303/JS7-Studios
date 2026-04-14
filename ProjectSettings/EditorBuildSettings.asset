@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Mapa.unity
     guid: 158211c3d8e5bc847825d38ed2864cab
+  - enabled: 1
+    path: Assets/Scenes/Ganar.unity
+    guid: 81a87a7c5fd05764280b45a5d478a93c
   m_configObjects: {}
