@@ -3259,6 +3259,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 298917548}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &384997753
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,6 +3472,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 384997755}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &397227897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3683,6 +3685,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 397227899}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &490350292
 GameObject:
   m_ObjectHideFlags: 0
@@ -3990,6 +3993,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 503164047}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &605095920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4202,6 +4206,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 605095922}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &617712692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4416,6 +4421,7 @@ MonoBehaviour:
   vidaMaxima: 4
   anim: {fileID: 617712698}
   zona: {fileID: 1116880992}
+  esJefeFinal: 0
 --- !u!1 &650256782
 GameObject:
   m_ObjectHideFlags: 0
@@ -4628,6 +4634,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 650256784}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &687359607
 GameObject:
   m_ObjectHideFlags: 0
@@ -4840,6 +4847,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 687359609}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &708849785
 GameObject:
   m_ObjectHideFlags: 0
@@ -5163,6 +5171,7 @@ MonoBehaviour:
   vidaMaxima: 4
   anim: {fileID: 721773775}
   zona: {fileID: 490350295}
+  esJefeFinal: 0
 --- !u!95 &721773775
 Animator:
   serializedVersion: 5
@@ -5689,6 +5698,7 @@ MonoBehaviour:
   vidaMaxima: 7
   anim: {fileID: 905254865}
   zona: {fileID: 0}
+  esJefeFinal: 1
 --- !u!95 &905254865
 Animator:
   serializedVersion: 5
@@ -10121,6 +10131,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 1413321667}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &1447984402
 GameObject:
   m_ObjectHideFlags: 0
@@ -10615,6 +10626,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 1649170672}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &1783943242
 GameObject:
   m_ObjectHideFlags: 0
@@ -94678,6 +94690,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 1826421531}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &1879218712
 GameObject:
   m_ObjectHideFlags: 0
@@ -94890,6 +94903,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 1879218714}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &1898382790
 GameObject:
   m_ObjectHideFlags: 0
@@ -95102,6 +95116,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 1898382792}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &1919821235
 GameObject:
   m_ObjectHideFlags: 0
@@ -95408,6 +95423,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 1964646107}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &1976674996
 GameObject:
   m_ObjectHideFlags: 0
@@ -95653,6 +95669,7 @@ MonoBehaviour:
   vidaMaxima: 2
   anim: {fileID: 1984158480}
   zona: {fileID: 0}
+  esJefeFinal: 0
 --- !u!1 &1996128055
 GameObject:
   m_ObjectHideFlags: 0

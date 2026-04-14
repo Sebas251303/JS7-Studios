@@ -9,6 +9,9 @@ public class VidaEnemigo : MonoBehaviour
     public Animator anim;
     public ZonaMiniJefes zona;
 
+    public bool esJefeFinal = false;
+
+
     void Start()
     {
         vidaActual = vidaMaxima;
@@ -60,7 +63,11 @@ public class VidaEnemigo : MonoBehaviour
             zona.AbrirZona();
         }
 
-         Invoke("CargarEscenaGanar", 1f);
+         if (esJefeFinal)
+        {
+            Invoke("CargarEscenaGanar", 1f);
+        }
+
 
 
 
