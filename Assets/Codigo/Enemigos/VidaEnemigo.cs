@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VidaEnemigo : MonoBehaviour
 {
@@ -59,6 +60,15 @@ public class VidaEnemigo : MonoBehaviour
             zona.AbrirZona();
         }
 
+         Invoke("CargarEscenaGanar", 1f);
+
+
+
         Destroy(gameObject, 1f);
     }
+    void CargarEscenaGanar()
+    {
+        SceneManager.LoadScene("Ganar");
+    }
+
 }
