@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour
         {
             Vector2 direction = (player.position - transform.position).normalized;
 
-            movement = new Vector2(direction.x, 0);
+            movement = direction;
             //  correcion de la vista del enemigo
         Vector3 escala = transform.localScale;
 
